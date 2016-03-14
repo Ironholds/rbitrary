@@ -199,7 +199,7 @@ Because for the data R programmers originally dealt with, it made a lot of sense
 
 These days people throw a ton of different things into R and factors are used less-commonly as a proportion than they once were. Plus, caching of character strings inside R means that basically all strings are factors from a memory point of view. But defaults are important; changing them means breakage.
 
-For a more detailed explanation I thoroughly recommend [Roger Peng's writeup](http://simplystatistics.org/2015/07/24/stringsasfactors-an-unauthorized-biography/)
+For a more detailed explanation I thoroughly recommend [Roger Peng's writeup](http://simplystatistics.org/2015/07/24/stringsasfactors-an-unauthorized-biography/) and [R Core member Thomas Lumley's writeup](http://notstatschat.tumblr.com/post/124987394001/stringsasfactors-sigh).
 
 ## Why doesn't `round` work like you think it should?
 
