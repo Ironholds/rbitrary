@@ -104,7 +104,7 @@ Then in 2001 `=` was introduced due to the dawning recognition that everyone *el
 
 Initially there were some things you couldn't do with `=` that you could do with `<-`, precisely because `=` is also used in function arguments and has very different meaning there. Basically you could only use `=` if it was at the top level of a call, or wrapped in parentheses. Otherwise the parser would read it, choke and die due to *ZOMGambiguity!*
 
-These days a lot of the differences between `<-` and `=` have been eliminated, and it's safe to use `=` *pretty* much everywhere. There are exceptions around specific functions, like `quote`, which holds unevaluated R eexpressions: it doesn't like `=`:
+These days a lot of the differences between `<-` and `=` have been eliminated, and it's safe to use `=` *pretty* much everywhere. There are exceptions around specific functions, like `quote`, which holds unevaluated R expressions; it doesn't like `=`:
 
 
 ```{r, eval=FALSE}
@@ -118,7 +118,7 @@ This error is kind of hilarious because the announcement of the introduction of 
 
 But `=` didn't exist until 2001, and wasn't safe to use without worrying until even later than that; as a result, and as a result of the origin of most of R (and its documentation and some of its people) in S, which does use `<-` everywhere, `<-` became The Idiom. All the examples use it, all of the books use it, most of the programmers who might teach you use it.
 
-Most of the time, though? Use whatever the heck you want. There are very very few situations in which `=` will trip you up and knock you down, and pretty much all of them are situations where you're doing something you should in no way be doing. The only consideration you should make when chosing which to use is your audience: if you're writing for other R programmers, who are primarily `<-` based as a group, it might increase readability difficulty of your code. Similarly, if you're planning on spending a lot of time reading everyone else's code, having `=` as your brain's default might make it harder.
+Most of the time, though? Use whatever the heck you want. There are very very few situations in which `=` will trip you up and knock you down, and pretty much all of them are situations where you're doing something you should in no way be doing. The only consideration you should make when chosing which to use is your audience: if you're writing for other R programmers, who are primarily `<-` based as a group, it might increase the readability difficulty of your code. Similarly, if you're planning on spending a lot of time reading everyone else's code, having `=` as your brain's default might make it harder.
 
 Generally, though, do what you want. Just don't operator-shame.
 
@@ -168,7 +168,7 @@ In the case of `library` calls, `foo` isn't evaluated directly. Instead it's hel
 as.character(substitute(foo))
 ```
 
-to see what it looks like, and if you do, you'll end up with "foo". Or to put it another way, inside the function, `library(foo)` is *precisely the same* as `library("foo").
+to see what it looks like, and if you do, you'll end up with "foo". Or to put it another way, inside the function, `library(foo)` is *precisely the same* as `library("foo")`.
 
 Why this is there...I'm provisionally going to blame some form of backwards compatibility but I have no idea. Anyone who does know, I'd love to hear.
 

@@ -199,14 +199,14 @@ Pictured: A C programmer reading their<br /> first R, pre-2001.
 <pre class="r"><code>foo(bar = &quot;baz&quot;)</code></pre>
 <p>Then in 2001 <code>=</code> was introduced due to the dawning recognition that everyone <em>else</em> uses it and so it might make switching to R from another language slightly less of a horror show if at least basic syntax lined up with other environments.</p>
 <p>Initially there were some things you couldn’t do with <code>=</code> that you could do with <code>&lt;-</code>, precisely because <code>=</code> is also used in function arguments and has very different meaning there. Basically you could only use <code>=</code> if it was at the top level of a call, or wrapped in parentheses. Otherwise the parser would read it, choke and die due to <em>ZOMGambiguity!</em></p>
-<p>These days a lot of the differences between <code>&lt;-</code> and <code>=</code> have been eliminated, and it’s safe to use <code>=</code> <em>pretty</em> much everywhere. There are exceptions around specific functions, like <code>quote</code>, which holds unevaluated R eexpressions: it doesn’t like <code>=</code>:</p>
+<p>These days a lot of the differences between <code>&lt;-</code> and <code>=</code> have been eliminated, and it’s safe to use <code>=</code> <em>pretty</em> much everywhere. There are exceptions around specific functions, like <code>quote</code>, which holds unevaluated R expressions; it doesn’t like <code>=</code>:</p>
 <pre class="r"><code>&gt; quote(y &lt;- 5)
 y &lt;- 5
 &gt; quote(y = 5)
 Error in quote(y = 5) : supplied argument name 'y' does not match 'expr'</code></pre>
 <p>This error is kind of hilarious because the announcement of the introduction of <code>=</code> included <code>quote(y = 5)</code> as <a href="http://developer.r-project.org/equalAssign.html">something with an equals sign that’d work fine</a>.</p>
 <p>But <code>=</code> didn’t exist until 2001, and wasn’t safe to use without worrying until even later than that; as a result, and as a result of the origin of most of R (and its documentation and some of its people) in S, which does use <code>&lt;-</code> everywhere, <code>&lt;-</code> became The Idiom. All the examples use it, all of the books use it, most of the programmers who might teach you use it.</p>
-<p>Most of the time, though? Use whatever the heck you want. There are very very few situations in which <code>=</code> will trip you up and knock you down, and pretty much all of them are situations where you’re doing something you should in no way be doing. The only consideration you should make when chosing which to use is your audience: if you’re writing for other R programmers, who are primarily <code>&lt;-</code> based as a group, it might increase readability difficulty of your code. Similarly, if you’re planning on spending a lot of time reading everyone else’s code, having <code>=</code> as your brain’s default might make it harder.</p>
+<p>Most of the time, though? Use whatever the heck you want. There are very very few situations in which <code>=</code> will trip you up and knock you down, and pretty much all of them are situations where you’re doing something you should in no way be doing. The only consideration you should make when chosing which to use is your audience: if you’re writing for other R programmers, who are primarily <code>&lt;-</code> based as a group, it might increase the readability difficulty of your code. Similarly, if you’re planning on spending a lot of time reading everyone else’s code, having <code>=</code> as your brain’s default might make it harder.</p>
 <p>Generally, though, do what you want. Just don’t operator-shame.</p>
 </div>
 <div id="why-do-we-use-.-so-much-in-function-parameters-everyone-else-uses-_." class="section level2">
@@ -234,7 +234,7 @@ No really, this is what S was developed on.
 <p>See, in R, everything is ultimately an expression. <code>foo</code>? Expression. It only does something when it’s evaluated, which could be when you hit return in the interpreter or <em>never</em> depending on the intentions of the person who wrote the function you’re passing <code>foo</code> into.</p>
 <p>In the case of <code>library</code> calls, <code>foo</code> isn’t evaluated directly. Instead it’s held, unevaluated, and then the unevaluated expressionis turned into a string with <code>as.character</code> (after a bit of mangling). You can run:</p>
 <pre class="r"><code>as.character(substitute(foo))</code></pre>
-<p>to see what it looks like, and if you do, you’ll end up with “foo”. Or to put it another way, inside the function, <code>library(foo)</code> is <em>precisely the same</em> as `library(“foo”).</p>
+<p>to see what it looks like, and if you do, you’ll end up with “foo”. Or to put it another way, inside the function, <code>library(foo)</code> is <em>precisely the same</em> as <code>library(&quot;foo&quot;)</code>.</p>
 <p>Why this is there…I’m provisionally going to blame some form of backwards compatibility but I have no idea. Anyone who does know, I’d love to hear.</p>
 </div>
 <div id="why-is-it-called-library-anyway-shouldnt-it-be-package" class="section level2">
