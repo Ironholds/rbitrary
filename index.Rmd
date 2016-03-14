@@ -277,7 +277,7 @@ foo:bar # Okay. Is this looking for something called bar in foo's namespace, or 
 
 ## Why isn't my question listed here?
 
-Because the author either didn't know it was a question or couldn't think of an answer! If you've got a question (with or without an answer) that you think is particularly common, interesting or weird, email ironholds flarghle gmail flarghle com, replacing "flarghle" with... well an @ sign and period.
+Because the author either didn't know it was a question or couldn't think of an answer! If you've got a question (with or without an answer) that you think is particularly common, interesting or weird, email ironholds flarghle gmail flarghle com, replacing "flarghle" with... well an @ sign and period. Or submit a request [here](https://github.com/Ironholds/rbitrary/issues).
 
 ## Having read this, I don't particularly like you. Or R.
 
