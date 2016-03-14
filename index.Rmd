@@ -78,7 +78,7 @@ The *reason* S uses `<-` is that APL did. APL being a programming language from 
 
 This got incorporated into S, and everything from S got incorporated into R, because R started off as basically "S with knobs on", and we've been using it ever since, despite the fact that keyboards have now standardised away from having an arrow key.
 
-So to summarise; the reason we use <code><-</code> for assignment is it made sense in a programming language written before the [incorporation of Apple Computers](https://en.wikipedia.org/wiki/1977), because it made sense in a programming language written *[before the moon landings](https://en.wikipedia.org/wiki/Apollo_11)*.
+So to summarise; the reason we use `<-` for assignment is it made sense in a programming language written before the [incorporation of Apple Computers](https://en.wikipedia.org/wiki/1977), because it made sense in a programming language written *[before the moon landings](https://en.wikipedia.org/wiki/Apollo_11)*.
 
 I regret to inform the audience that this is not the last R idiosyncracy in this document that can be summarised as "because keyboards".
 
