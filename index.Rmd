@@ -164,7 +164,7 @@ You pass an argument through to a function, it evaluates the argument, it uses t
 
 See, in R, everything is ultimately an expression. `foo`? Expression. It only does something when it's evaluated, which could be when you hit return in the interpreter or *never* depending on the intentions of the person who wrote the function you're passing `foo` into.
 
-In the case of `library` calls, `foo` isn't evaluated directly. Instead it's held, unevaluated, and then the unevaluated expressionis turned into a string with `as.character` (after a bit of mangling). You can run:
+In the case of `library` calls, `foo` isn't evaluated directly. Instead it's held, unevaluated, and then the unevaluated expression is turned into a string with `as.character` (after a bit of mangling). You can run:
 
 ```{r, eval=FALSE}
 as.character(substitute(foo))
