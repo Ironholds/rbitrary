@@ -261,7 +261,7 @@ So, `::` and `:::` indicate that a function or method or object or whatever shou
 
 The difference between the two is that `::` grabs stuff the package author has explicitly labelled as exportable. `:::` grabs anything, even non-exported stuff. Relying on the latter is dangerous since (1) package internals can unexpectedly change and (2) there's usually a good reason for something to not be exported such as, say, it's compiled code that requires a load of R-side error checking before it's called, and you're about to unintentionally segfault your machine.
 
-So generally you should be using `::`; if something is internal to a package, safe to use, and has use cases outside the package itself, I recommend emailing the author/opening a GitHub issue/delete as applicable to see if it can be exported. If it's internal to a package, has use cases outside the package, and isn't safe to use...well, it isn't safe to use.
+So generally you should be using `::`; if something is internal to a package, safe to use, and has use cases outside the package itself, I recommend emailing the author/opening a GitHub issue/delete as applicable to see if it can be exported - or, frankly, just copying the code and adding a comment identifying where it came from. If it's internal to a package, has use cases outside the package, and isn't safe to use...well, it isn't safe to use.
 
 Why not use `:`? Well, because `:` already has a meaning; it's used for a range, both in R and in [mathematics generally](https://en.wikipedia.org/wiki/Colon_%28punctuation%29#Mathematics_and_logic). Using it for namespacing could create quite a bit of ambiguity. Suppose it was used that way:
 
