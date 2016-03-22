@@ -305,6 +305,21 @@ Lexical scope might not be your preferred way of doing things - although there a
 
 One interesting tidbit around Lisp implementations and statistical computing is that while R was Lisp-*influenced*, there was actually a statistical programming environment called LISP-STAT that was statistics built on top of Lisp, with lexical scoping included. It was [written by Luke Tierney](http://homepage.stat.uiowa.edu/~luke/xls/xlsinfo/xlsinfo.html), who you might know better as [the reason R has a byte-code compiler](http://homepage.stat.uiowa.edu/~luke/R/compiler/compiler.pdf). Statistical computing is basically the programming equivalent of Shoegazing music and has, at most, ten actual people in the entire field.
 
+## What's with the weird function names?
+
+If the function name you think is weird isn't one of `grep`, `ls`, `cat`, `rm`, `head`, `tail` or similar, I don't have answers for you. If it *is* one of those things - you're in luck! And not from a UNIX computing background, which is fine, since hell, I did the first 24 months of R programming on a Windows machine. Anyway.
+
+So all of those function names come from little unix tools you'll find on Macs and GNU/Linux distributions in the command line; why is `ls` used to list all the objects in your current environment? Because on the command line:
+
+```{r, eval=FALSE}
+ironholds@MargretWander:~/example_dir$ ls
+a_directory  a_file.txt  another_directory  another_file.txt
+```
+
+`ls` is the command that lists all the files and directories in your current environment! Or, well, directory. Same thing really.
+
+Similarly, `grep` is R's regular expression library and also the name of a unix tool for finding stuff with regular expressions; `tail` and `head` grab however-many elements off the bottom or top of an object because that's what the `tail` and `head` unix tools do for *files*, and so on and so forth. An A-Z of the [command-line commands in unix](http://ss64.com/bash/) is good reading to see how many parallels you can find.
+
 ## Why isn't my question listed here?
 
 Because the author either didn't know it was a question or couldn't think of an answer! If you've got a question (with or without an answer) that you think is particularly common, interesting or weird, email ironholds flarghle gmail flarghle com, replacing "flarghle" with... well an @ sign and period. Or submit a request [here](https://github.com/Ironholds/rbitrary/issues).

@@ -135,6 +135,7 @@ $(document).ready(function () {
 <li><a href="#whats-with-and-whats-the-difference-why-not-start-with">What’s with <code>::</code> and <code>:::</code>? What’s the difference? Why not start with <code>:</code>?</a></li>
 <li><a href="#whats-the-actual-weirdest-or-most-specific-thing-about-r">What’s the actual weirdest or most specific thing about R?</a></li>
 <li><a href="#why-does-r-have-lexical-scope">Why does R have lexical scope?</a></li>
+<li><a href="#whats-with-the-weird-function-names">What’s with the weird function names?</a></li>
 <li><a href="#why-isnt-my-question-listed-here">Why isn’t my question listed here?</a></li>
 <li><a href="#having-read-this-i-dont-particularly-like-you.-or-r.">Having read this, I don’t particularly like you. Or R.</a></li>
 </ul></li>
@@ -328,6 +329,15 @@ foo:bar # Okay. Is this looking for something called bar in foo's namespace, or 
 <p>R isn’t just a child of S: it has other influences too, and one of the biggest ones was Scheme. Which is, amongst other things, a Lisp implementation: it had lexical scope. This methodology made its way into R thanks to Scheme, and was actually one of the earliest and most fundamental distinctions between S and R.</p>
 <p>Lexical scope might not be your preferred way of doing things - although there are ways to simulate dynamic scope in R! - but it’s how R is written, and it’s a pretty core element of what makes R, R. And the answer to where it comes from is, as the overall FAQ suggests, Scheme.</p>
 <p>One interesting tidbit around Lisp implementations and statistical computing is that while R was Lisp-<em>influenced</em>, there was actually a statistical programming environment called LISP-STAT that was statistics built on top of Lisp, with lexical scoping included. It was <a href="http://homepage.stat.uiowa.edu/~luke/xls/xlsinfo/xlsinfo.html">written by Luke Tierney</a>, who you might know better as <a href="http://homepage.stat.uiowa.edu/~luke/R/compiler/compiler.pdf">the reason R has a byte-code compiler</a>. Statistical computing is basically the programming equivalent of Shoegazing music and has, at most, ten actual people in the entire field.</p>
+</div>
+<div id="whats-with-the-weird-function-names" class="section level2">
+<h2>What’s with the weird function names?</h2>
+<p>If the function name you think is weird isn’t one of <code>grep</code>, <code>ls</code>, <code>cat</code>, <code>rm</code>, <code>head</code>, <code>tail</code> or similar, I don’t have answers for you. If it <em>is</em> one of those things - you’re in luck! And not from a UNIX computing background, which is fine, since hell, I did the first 24 months of R programming on a Windows machine. Anyway.</p>
+<p>So all of those function names come from little unix tools you’ll find on Macs and GNU/Linux distributions in the command line; why is <code>ls</code> used to list all the objects in your current environment? Because on the command line:</p>
+<pre class="r"><code>ironholds@MargretWander:~/example_dir$ ls
+a_directory  a_file.txt  another_directory  another_file.txt</code></pre>
+<p><code>ls</code> is the command that lists all the files and directories in your current environment! Or, well, directory. Same thing really.</p>
+<p>Similarly, <code>grep</code> is R’s regular expression library and also the name of a unix tool for finding stuff with regular expressions; <code>tail</code> and <code>head</code> grab however-many elements off the bottom or top of an object because that’s what the <code>tail</code> and <code>head</code> unix tools do for <em>files</em>, and so on and so forth. An A-Z of the <a href="http://ss64.com/bash/">command-line commands in unix</a> is good reading to see how many parallels you can find.</p>
 </div>
 <div id="why-isnt-my-question-listed-here" class="section level2">
 <h2>Why isn’t my question listed here?</h2>
