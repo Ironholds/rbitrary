@@ -277,6 +277,20 @@ bar = 10
 foo:bar # Okay. Is this looking for something called bar in foo's namespace, or generating a range from 1 to 10? ;)
 ```
 
+## What's the actual weirdest or most specific thing about R?
+
+NaNs.
+
+An NaN is "not a number"; a numeric value that isn't *actually* a value. In R these are just a form of NA; an NA in a character vector is an NA. An NA in a numeric vector is an NaN (or sometimes just an NA, depending on your compiler. Compilers are funny things.)
+
+Where this gets weird: how are NaNs represented? Obviously you have to have *some* value that indicates "this isn't a value", as irrational as that sounds, because not-a-value still needs to mean something to the compiler and interpreter. And in R, "a value that isn't a value" is represented as:
+
+*drumroll*
+
+1954.
+
+No, [really](https://github.com/wch/r-source/blob/a2e7ab3faa86767c4a45ed4dac3b4b9f9bc71eca/src/main/arithmetic.c#L114). "NaN" to the user is the number 1954 to the computer. And the reason this is super-fun is why 1954 was picked - because it was [Ross Ihaka's year of birth](https://en.wikipedia.org/wiki/Ross_Ihaka).
+
 ## Why isn't my question listed here?
 
 Because the author either didn't know it was a question or couldn't think of an answer! If you've got a question (with or without an answer) that you think is particularly common, interesting or weird, email ironholds flarghle gmail flarghle com, replacing "flarghle" with... well an @ sign and period. Or submit a request [here](https://github.com/Ironholds/rbitrary/issues).
