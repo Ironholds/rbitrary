@@ -291,6 +291,20 @@ Where this gets weird: how are NaNs represented? Obviously you have to have *som
 
 No, [really](https://github.com/wch/r-source/blob/a2e7ab3faa86767c4a45ed4dac3b4b9f9bc71eca/src/main/arithmetic.c#L114). "NaN" to the user is the number 1954 to the computer. And the reason this is super-fun is why 1954 was picked - because it was [Ross Ihaka's year of birth](https://en.wikipedia.org/wiki/Ross_Ihaka).
 
+## Why does R have lexical scope?
+
+What the question is referring to is the question of when variables in code exist, and where they can be accessed: the "scope" of those variables. Languages tend to handle this in one of two ways - using *lexical* scoping, where a variable that exists within a function exists within its *text*, and is accessible only by code that has access to the function's text (such as functions defined within that function), and *dynamic* scoping, where it's based not on the text but on the runtime - variables can be accessed while the function is running, from wherever.
+
+Speaking personally for a second, scoping problems give me a *terrible* headache. If you give me a choice between writing assembler and thinking about scope...well, you're probably a monster, because nobody deserves to have to deal with any assembler I'd write, but I'll pick writing assembler every day.
+
+Anyway. R uses lexical scope, but it's kind of a weird choice for a descendant of S, since [most versions of S use dynamic scope](https://cran.r-project.org/doc/FAQ/R-FAQ.html#Lexical-scoping). It makes more sense if you know where lexical scope comes from: it was a really common (pretty much uniform!) concept in implementations of the Lisp programming language, and that's really what influenced the use of lexical scope in other languages.
+
+R isn't just a child of S: it has other influences too, and one of the biggest ones was Scheme. Which is, amongst other things, a Lisp implementation: it had lexical scope. This methodology made its way into R thanks to Scheme, and was actually one of the earliest and most fundamental distinctions between S and R.
+
+Lexical scope might not be your preferred way of doing things - although there are ways to simulate dynamic scope in R! - but it's how R is written, and it's a pretty core element of what makes R, R. And the answer to where it comes from is, as the overall FAQ suggests, Scheme.
+
+One interesting tidbit around Lisp implementations and statistical computing is that while R was Lisp-*influenced*, there was actually a statistical programming environment called LISP-STAT that was statistics built on top of Lisp, with lexical scoping included. It was [written by Luke Tierney](http://homepage.stat.uiowa.edu/~luke/xls/xlsinfo/xlsinfo.html), who you might know better as [the reason R has a byte-code compiler](http://homepage.stat.uiowa.edu/~luke/R/compiler/compiler.pdf). Statistical computing is basically the programming equivalent of Shoegazing music and has, at most, ten actual people in the entire field.
+
 ## Why isn't my question listed here?
 
 Because the author either didn't know it was a question or couldn't think of an answer! If you've got a question (with or without an answer) that you think is particularly common, interesting or weird, email ironholds flarghle gmail flarghle com, replacing "flarghle" with... well an @ sign and period. Or submit a request [here](https://github.com/Ironholds/rbitrary/issues).
