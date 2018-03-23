@@ -120,7 +120,7 @@ This error is kind of hilarious because the announcement of the introduction of 
 
 But `=` didn't exist until 2001, and wasn't safe to use without worrying until even later than that. And `<-` was still the standard in S, where R, most of its code and a lot of its people originated. Combine the two, and the result is that `<-` became The Idiom. All the examples use it, all of the books use it, most of the programmers who might teach you use it.
 
-Most of the time, though? Use whatever the heck you want. There are very very few situations in which `=` will trip you up and knock you down, and pretty much all of them are situations where you're doing something you should in no way be doing. The only consideration you should make when chosing which to use is your audience: if you're writing for other R programmers, who are primarily `<-` based as a group, it might increase the readability difficulty of your code. Similarly, if you're planning on spending a lot of time reading everyone else's code, having `=` as your brain's default might make it harder.
+Most of the time, though? Use whatever the heck you want. There are very very few situations in which `=` will trip you up and knock you down, and pretty much all of them are situations where you're doing something you should in no way be doing. The only consideration you should make when choosing which to use is your audience: if you're writing for other R programmers, who are primarily `<-` based as a group, it might increase the readability difficulty of your code. Similarly, if you're planning on spending a lot of time reading everyone else's code, having `=` as your brain's default might make it harder.
 
 Generally, though, do what you want. Just don't operator-shame.
 
