@@ -1,4 +1,4 @@
-# [Rbitrary Standards in R](https://ironholds.org/projects/rbitrary/)
+# [Rbitrary Standards in R](https://ironholds.org/resources/misc/rbitrary/)
 
 *Rbitrary Standards in R* is a collection of answers to questions about some of the weirdest and most seemingly-random elements of the R programming language and environment. It does not contain any obscenities, but has worked very hard to make sure this isn't a hindrance in explaining some of them.
 
